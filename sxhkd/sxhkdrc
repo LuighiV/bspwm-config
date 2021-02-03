@@ -122,7 +122,7 @@ super + {Left,Down,Up,Right}
 
 # change rotation of group of nodes
 super + {r}
-	bspc node -f @parent && bspc node -R 90
+	bspc node -f @parent && bspc node -R 90 && bspc node -f @first
 
 #
 # Add keybindings for volume and lightness
