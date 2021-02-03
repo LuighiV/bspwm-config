@@ -61,9 +61,10 @@ modules-right = wlan eth filesystem xbacklight pulseaudio xkeyboard memory cpu  
 
 tray-position = right
 tray-padding = 2
+tray-reparent = true
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -248,7 +249,7 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %local_ip% %downspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>

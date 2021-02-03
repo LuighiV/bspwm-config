@@ -72,3 +72,10 @@ Take into account that in the config file should be a bar definition in
 For polybar there are some interesting styles which could be found at:
 [polybar-themes](https://github.com/adi1090x/polybar-themes)
 
+For network manager instead of using nm-applet it could be used the 
+project [networkmanager-dmenu](https://github.com/firecat53/networkmanager-dmenu)
+
+To install it:
+```bash
+yay -S networkmanager-dmenu
+```

@@ -120,6 +120,10 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# change rotation of group of nodes
+super + {r}
+	bspc node -f @parent && bspc node -R 90
+
 #
 # Add keybindings for volume and lightness
 #
