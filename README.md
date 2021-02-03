@@ -1,7 +1,7 @@
 # Configuration the BSPWM
 
 This setting is based on [Bspwm: A Bare-Bones Window Manager](https://dev.to/l04db4l4nc3r/bspwm-a-bare-bones-window-manager-44di).
-The article offers a detail explanation about the configuration for BSPWM
+The article offers a detailed explanation about the configuration for BSPWM.
 
 ## Getting started 
 
@@ -66,9 +66,9 @@ chmod +x $PWD/polybar/launch.sh
 And posteriorly add the corresponding link in the appropriate address.
 
 Take into account that in the config file should be a bar definition in
-[bar/barname] so you should use this name when calling in the launch script.
+`[bar/barname]` so you should use this name when calling in the launch script.
 
-#References
+## References
 For polybar there are some interesting styles which could be found at:
 [polybar-themes](https://github.com/adi1090x/polybar-themes)
 
