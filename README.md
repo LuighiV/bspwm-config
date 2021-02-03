@@ -67,3 +67,8 @@ And posteriorly add the corresponding link in the appropriate address.
 
 Take into account that in the config file should be a bar definition in
 [bar/barname] so you should use this name when calling in the launch script.
+
+#References
+For polybar there are some interesting styles which could be found at:
+[polybar-themes](https://github.com/adi1090x/polybar-themes)
+
