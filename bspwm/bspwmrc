@@ -29,8 +29,10 @@ xss-lock --transfer-sleep-lock -- sflock &
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-nm-applet &
-pa-applet &
+# Update: nm-applet replaced by networkmanager_dmenu and pa-applet incorporated
+# into the polybar
+#nm-applet & 
+#pa-applet &
 blueman-applet &
 
 # start-up applications

@@ -40,8 +40,9 @@ chmod 644 $PWD/sxhkd/sxhkdrc
 
 Here the polybar status bar is used which is installed via:
 ```bash
-yay -S siji-git ttf-unifont xorg-fonts-misc
+yay -S siji-git ttf-unifont xorg-fonts-misc-otb
 yay -S polybar
+fc-cache -f -v
 ```
 ```bash
 cp /usr/share/doc/polybar/config ~/.config/polybar/config
@@ -67,6 +68,12 @@ And posteriorly add the corresponding link in the appropriate address.
 
 Take into account that in the config file should be a bar definition in
 `[bar/barname]` so you should use this name when calling in the launch script.
+
+The current configuration uses also the program networkmanager_dmenu, which
+should be installed to work appropriately.
+```
+yay -S networkmanager-dmenu
+```
 
 ## References
 For polybar there are some interesting styles which could be found at:

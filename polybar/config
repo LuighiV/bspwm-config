@@ -57,7 +57,7 @@ font-2 = siji:pixelsize=8;1
 
 modules-left = bspwm i3
 ;modules-center = mpd
-modules-right = wlan eth filesystem xbacklight pulseaudio xkeyboard memory cpu  battery temperature date powermenu
+modules-right = wlan eth filesystem backlight-acpi pulseaudio xkeyboard memory cpu  battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -202,6 +202,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+enable-scroll = true
 
 [module/cpu]
 type = internal/cpu
@@ -226,12 +227,11 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid% %downspeed:9% %local_ip%
+label-connected = "%{A1:networkmanager_dmenu &:}%essid% %local_ip% %downspeed:9%%{A}"
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
+label-disconnected = "%{A1:networkmanager_dmenu &:}%ifname% Offline%{A}"
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
@@ -249,12 +249,11 @@ interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip% %downspeed:9%
+label-connected = "%{A1:networkmanager_dmenu &:}%local_ip% %downspeed:9%%{A}"
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
+format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
+label-disconnected = "%{A1:networkmanager_dmenu &:}%ifname% Offline%{A}"
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
@@ -299,6 +298,8 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+click-right = pavucontrol
 
 [module/alsa]
 type = internal/alsa
@@ -398,16 +399,16 @@ menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
-;menu-0-2 = lock
-;menu-0-2-exec = menu-open-3
+menu-0-2 = lock
+menu-0-2-exec = sflock 
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = systemctl reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = systemctl poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
