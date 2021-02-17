@@ -75,6 +75,18 @@ should be installed to work appropriately.
 yay -S networkmanager-dmenu
 ```
 
+# Fixing cursor X
+
+In BSPWM when you are in no active window, appears a cursor with a X shape.
+According to these references:
+[Reddit answer](https://www.reddit.com/r/bspwm/comments/8gwwlc/cursor_displays_x_when_not_over_window/dyfj6cw?utm_source=share&utm_medium=web2x&context=3) 
+and 
+[Archlinux wiki](https://wiki.archlinux.org/index.php/Cursor_themes#Change_X_shaped_default_cursor)
+the solution is add to `~/.xinitrc` o `bspwm` files:
+```bash
+xsetroot -cursor_name left_ptr
+```
+
 ## References
 For polybar there are some interesting styles which could be found at:
 [polybar-themes](https://github.com/adi1090x/polybar-themes)
