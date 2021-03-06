@@ -75,7 +75,7 @@ should be installed to work appropriately.
 yay -S networkmanager-dmenu
 ```
 
-# Fixing cursor X
+## Fixing cursor X
 
 In BSPWM when you are in no active window, appears a cursor with a X shape.
 According to these references:
@@ -86,6 +86,20 @@ the solution is add to `~/.xinitrc` o `bspwm` files:
 ```bash
 xsetroot -cursor_name left_ptr
 ```
+
+## Trouble with slack and other eletron based apps
+When there is a notification, the window of Slack, for example freezes for a
+while which causes to take some actions such as killing the process and
+starting it again.
+
+According to this thread [Slack-desktop freezes on notification](https://www.reddit.com/r/archlinux/comments/8z5bex/slackdesktop_freezes_on_notification/e2g6z3n?utm_source=share&utm_medium=web2x&context=3)
+it is due to the inexisting daemon notification service. So to avoid this
+trouble, you should install such daemon, for example via `dunst`.
+
+```bash
+yay -S dunst
+```
+
 
 ## References
 For polybar there are some interesting styles which could be found at:
