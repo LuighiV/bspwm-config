@@ -46,6 +46,7 @@ nextcloud &
 nixnote2 &
 teams &
 onedrive --monitor &
+python3 /opt/thefanclub/overgrive/overgrive &
 keepassxc &
 
 #for battery
