@@ -22,7 +22,12 @@ picom &
 $HOME/.config/polybar/launch.sh
 bspc rule -a "Microsoft Teams - Preview" desktop='^5'
 bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a discord desktop='^7' 
+bspc rule -a Thunderbird desktop='^6' 
+bspc rule -a Slack desktop='^9' 
+bspc rule -a Rambox desktop='^4' 
 bspc rule -a Chromium desktop='^2'
+bspc rule -a Brave-browser desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
@@ -47,6 +52,10 @@ nixnote2 &
 teams &
 onedrive --monitor &
 python3 /opt/thefanclub/overgrive/overgrive &
+slack &
+discord &
+birdtray &
+rambox &
 keepassxc &
 
 #for battery
