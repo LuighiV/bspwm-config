@@ -75,7 +75,51 @@ should be installed to work appropriately.
 yay -S networkmanager-dmenu
 ```
 
-## Fixing cursor X
+## Using rofi as launcher
+
+[Rofi](https://github.com/davatorium/rofi) is an interesting tool which could
+be use as a launcher and as a window switcher. It could be installed by:
+```
+yay -S rofi
+```
+
+Although a powerful tool their appearance is old-fashioned, so, here we use a
+repository which implements several themes and applets. This repository is
+located at https://github.com/adi1090x/rofi
+
+The process to install is:
+```
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+```
+
+This script installs a set of scripts to launch specific features of rofi. 
+All the scripts are located under `$HOME/.config/rofi/bin`.
+
+Now to these scripts where recognized you should add the following line to
+`xprofile` or to the shell config file.
+
+```
+echo "PATH=$PATH:~/.config/rofi/bin" >> ~/.xprofile
+```
+
+To use local themes you could import them via:
+```
+rofi-theme-selector
+```
+And according to the information the theme could be applied via Alt+a inside
+the dialog.
+
+## Trouble: Rambox not shown in rofi windows switcher
+
+When Rambox is configured to start minimized, the window is not recognized by
+rofi event after being shown. To prevent this issue, disable this option. And
+the window of Rambox will be recognized.
+
+
+## Trouble: Fixing cursor X
 
 In BSPWM when you are in no active window, appears a cursor with a X shape.
 According to these references:

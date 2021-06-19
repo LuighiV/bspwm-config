@@ -8,7 +8,15 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+  rofi -no-lazy-grab -show drun -modi drun
+
+# program launcher
+super + shift + @space
+  rofi -no-lazy-grab -show run -modi drun
+
+# window switcher
+super + a
+  rofi -no-lazy-grab -show window -modi window
 
 # make sxhkd reload its configuration files:
 super + Escape
