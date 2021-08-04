@@ -12,11 +12,15 @@ super + @space
 
 # program launcher
 super + shift + @space
-  rofi -no-lazy-grab -show run -modi drun
+  rofi -no-lazy-grab -show run -modi run
 
 # window switcher
 super + a
   rofi -no-lazy-grab -show window -modi window
+
+# window switcher in screen
+super + shift + a
+  rofi -no-lazy-grab -show windowcd -modi windowcd
 
 # make sxhkd reload its configuration files:
 super + Escape

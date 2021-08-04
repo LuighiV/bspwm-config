@@ -17,6 +17,7 @@ bspc config normal_border_color      "#202A25"
 # Staring wallpaper manager
 nitrogen --restore &
 picom &
+rofi -no-lazy-grab -show drun -modi drun &
 
 # Adding the polybar
 $HOME/.config/polybar/launch.sh
