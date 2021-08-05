@@ -2,7 +2,24 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+#Check available monitors
+#Replace variable to your own monitor
+#check with xrandr -q | grep -w connected
+MONITOR_NAME="eDP-1"
+EXTERNAL_MONITOR_NAME="HDMI-1"
+
+STATUS_EXTERNAL_MONITOR=$(xrandr --query | grep $EXTERNAL_MONITOR_NAME)
+if [[ $STATUS_EXTERNAL_MONITOR = *connected* ]]; then
+    xrandr --output $MONITOR_NAME --primary --mode 1366x768  --output $EXTERNAL_MONITOR_NAME --mode 1920x1080 --rotate normal --right-of $MONITOR_NAME
+fi
+
+#Set according to presence of external monitor
+if [[ $STATUS_EXTERNAL_MONITOR = *connected* ]]; then
+	bspc monitor $MONITOR_NAME -d 1 2 3 4 5
+	bspc monitor $EXTERNAL_MONITOR_NAME -d 6 7 8 9 10
+else
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+fi
 
 bspc config border_width         2
 bspc config window_gap           5
@@ -17,10 +34,15 @@ bspc config normal_border_color      "#202A25"
 # Staring wallpaper manager
 nitrogen --restore &
 picom &
-rofi -no-lazy-grab -show drun -modi drun &
+#rofi -no-lazy-grab -show drun -modi drun &
 
-# Adding the polybar
-$HOME/.config/polybar/launch.sh
+# Adding the polybar according to monitors
+if [[ $STATUS_EXTERNAL_MONITOR = *connected* ]]; then
+	$HOME/.config/polybar/launch_two.sh
+else
+	$HOME/.config/polybar/launch.sh
+fi
+
 bspc rule -a "Microsoft Teams - Preview" desktop='^5'
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a discord desktop='^7' 
