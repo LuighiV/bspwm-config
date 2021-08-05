@@ -64,7 +64,7 @@ You should also add the appropriate permissions:
 chmod +x $PWD/polybar/launch.sh
 ```
 
-And posteriorly add the corresponding link in the appropriate address.
+And then add the corresponding link in the appropriate address.
 
 Take into account that in the config file should be a bar definition in
 `[bar/barname]` so you should use this name when calling in the launch script.
@@ -74,6 +74,19 @@ should be installed to work appropriately.
 ```
 yay -S networkmanager-dmenu
 ```
+
+## Multimonitor support
+The support for multimonitor is based mainly on https://protesilaos.com/codelog/multihead-bspwm-polybar/.
+It requires uses by default the HDMI-1 output for external monitor. You can
+edit the `EXTERNAL_MONITOR_NAME` in case you use another. You can check also
+the connected monitors by:
+```
+xrandr -q | grep -w connected 
+```
+
+There is also a script named `launch_two.sh` in the configuration folder for
+polybar which creates a bar for the attached monitor. It uses the HDMI-1
+monitor. If you use another, could change to another in the `config` file.
 
 ## Using rofi as launcher
 
