@@ -24,7 +24,7 @@ cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd
 ```
 
 Here we are going to edit the configuration in files located in the
-corresponding folders in this repository, so only need to link the to the
+corresponding folders in this repository, so only need to link to the
 corresponding location:
 ```bash
 ln -s $PWD/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
@@ -124,6 +124,14 @@ rofi-theme-selector
 ```
 And according to the information the theme could be applied via Alt+a inside
 the dialog.
+
+### Using rofi to select emoji
+
+Employing this repository https://github.com/Mange/rofi-emoji, it adds
+ modi to select an emoji and copy to the clipboard. To use it you can call by:
+```
+rofi --show emoji -modi emoj
+```
 
 ## Trouble: Rambox not shown in rofi windows switcher
 
