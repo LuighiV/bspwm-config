@@ -9,12 +9,14 @@ MONITOR_NAME="eDP-1"
 EXTERNAL_MONITOR_NAME="HDMI-1"
 
 STATUS_EXTERNAL_MONITOR=$(xrandr --query | grep $EXTERNAL_MONITOR_NAME)
-if [[ $STATUS_EXTERNAL_MONITOR = *connected* ]]; then
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
     xrandr --output $MONITOR_NAME --primary --mode 1366x768  --output $EXTERNAL_MONITOR_NAME --mode 1920x1080 --rotate normal --right-of $MONITOR_NAME
+else
+    xrandr --output $EXTERNAL_MONITOR_NAME --off
 fi
 
 #Set according to presence of external monitor
-if [[ $STATUS_EXTERNAL_MONITOR = *connected* ]]; then
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
 	bspc monitor $MONITOR_NAME -d 1 2 3 4 5
 	bspc monitor $EXTERNAL_MONITOR_NAME -d 6 7 8 9 10
 else
@@ -37,7 +39,7 @@ picom &
 #rofi -no-lazy-grab -show drun -modi drun &
 
 # Adding the polybar according to monitors
-if [[ $STATUS_EXTERNAL_MONITOR = *connected* ]]; then
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
 	$HOME/.config/polybar/launch_two.sh
 else
 	$HOME/.config/polybar/launch.sh
