@@ -1,0 +1,3 @@
+[submodule "polybar/polywins"]
+	path = polybar/polywins
+	url = https://github.com/tam-carre/polywins
