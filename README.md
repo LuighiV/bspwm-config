@@ -74,6 +74,15 @@ should be installed to work appropriately.
 ```
 yay -S networkmanager-dmenu
 ```
+### All windows in polybar
+
+There is an interesting script by [Tam-Carre](https://github.com/tam-carre)
+which es named [polywins](https://github.com/tam-carre/polywins) based on
+[polybar-windows](https://github.com/aroma1994/polybar-windows) that enables
+showing all window names and select them in the polybar.
+
+This project is included as submodule in this repository and added to the
+second polybar configuration.
 
 ## Multimonitor support
 The support for multimonitor is based mainly on https://protesilaos.com/codelog/multihead-bspwm-polybar/.

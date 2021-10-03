@@ -105,6 +105,7 @@ font-1 = unifont:fontformat=truetype:size=6:antialias=false;0
 font-2 = siji:pixelsize=8;1
 
 modules-left = bspwm i3 xwindow_large
+modules-center = polywins
 modules-right = wlan eth filesystem pulseaudio memory cpu  battery temperature date powermenu
 
 tray-position = right
@@ -462,7 +463,14 @@ menu-2-1-exec = menu-open-0
 ;menu-3-0-exec = sflock
 ;menu-3-1 = cancel
 ;menu-3-1-exec = menu-open-0
-
+;
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/scripts/polywins.sh
+format = <label>
+label = %output%
+label-padding = 1
+tail = true
 
 [settings]
 screenchange-reload = true
