@@ -74,9 +74,9 @@ blueman-applet &
 megasync &
 nextcloud &
 nixnote2 &
-teams &
-onedrive --monitor &
-python3 /opt/thefanclub/overgrive/overgrive &
+# teams &
+# onedrive --monitor &
+# python3 /opt/thefanclub/overgrive/overgrive &
 slack &
 discord &
 birdtray &
