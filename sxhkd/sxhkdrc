@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	terminator
+	kitty
 
 # program launcher
 super + @space
@@ -22,9 +22,17 @@ super + a
 super + shift + a
   rofi -no-lazy-grab -show windowcd -modi windowcd
 
-# window switcher in screen
+# window emoji
+super + e
+  rofi -no-lazy-grab -show filebrowser -modi filebrowser
+
+# window emoji
 super + shift + e
   rofi -no-lazy-grab -show emoji -modi emoji
+
+# window emoji
+super + shift + p
+  keepmenu
 
 # make sxhkd reload its configuration files:
 super + Escape
