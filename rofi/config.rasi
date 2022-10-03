@@ -4,7 +4,7 @@ configuration {
   modi:              "window,run,drun,keys,ssh";
   show-icons:        true;
   icon-theme:        "Papirus";
-  kb-row-up:         "Up,Control+k,ISO_Left_Tab";
+  kb-row-up:         "Up,Control+k";
   kb-row-down:       "Down,Control+j";
   kb-remove-to-eol:  "Control+Shift+e";
   kb-accept-entry:   "Control+m,Return,KP_Enter";
