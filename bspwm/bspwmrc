@@ -77,10 +77,10 @@ nixnote2 &
 # teams &
 # onedrive --monitor &
 # python3 /opt/thefanclub/overgrive/overgrive &
-slack &
-discord &
-birdtray &
-rambox &
+slack -s %U &
+# discord &
+# birdtray &
+rambox --no-sandbox %U &
 keepassxc &
 
 #for battery
