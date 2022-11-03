@@ -25,6 +25,8 @@ fi
 
 bspc config border_width         2
 bspc config window_gap           5
+bspc config top_padding          0
+bspc config bottom_padding       0
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -74,7 +76,7 @@ blueman-applet &
 megasync &
 nextcloud &
 nixnote2 &
-# teams &
+teams &
 # onedrive --monitor &
 # python3 /opt/thefanclub/overgrive/overgrive &
 slack -s %U &
