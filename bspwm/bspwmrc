@@ -91,6 +91,9 @@ xfce4-power-manager &
 #For forecast
 ntfd &
 
+#Notion
+notion-app-enhanced &
+
 # Fix the cursor default
 # https://www.reddit.com/r/bspwm/comments/8gwwlc/cursor_displays_x_when_not_over_window/dyfj6cw?utm_source=share&utm_medium=web2x&context=3
 # https://wiki.archlinux.org/index.php/Cursor_themes#Change_X_shaped_default_cursor
