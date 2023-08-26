@@ -48,7 +48,10 @@ else
 fi
 
 bspc rule -a "Microsoft Teams - Preview" desktop='^5'
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Gimp-2.10 desktop='^8' state=floating follow=on
+bspc rule -a Xschem desktop='^7' state=floating follow=on
+bspc rule -a dialog state=floating follow=on
+bspc rule -a Dialog state=floating follow=on
 bspc rule -a discord desktop='^7' 
 bspc rule -a Thunderbird desktop='^6' 
 bspc rule -a Slack desktop='^9' 
